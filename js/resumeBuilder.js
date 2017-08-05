@@ -22,9 +22,9 @@ var bio = {
         $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
         $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
-        $("#header").append(HTMLemail.replace("%data%", bio.contacts["email"]));
-        $("#header").append(HTMLgithub.replace("%data%", bio.contacts["github"]));
-        $("#header").append(HTMLlocation.replace("%data%", bio.contacts["location"]));
+        $("#header").append(HTMLemail.replace("%data%", bio.contacts.email));
+        $("#header").append(HTMLgithub.replace("%data%", bio.contacts.github));
+        $("#header").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
         $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
         $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg));
