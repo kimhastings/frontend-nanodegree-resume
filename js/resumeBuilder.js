@@ -19,18 +19,19 @@ var bio = {
     ],
     "biopic": "images/owl.jpg",
     "display": function() {
-        $("#topContacts, #footerContacts").prepend(HTMLheaderRole.replace("%data%", bio.role));
-        $("#topContacts, #footerContacts").prepend(HTMLheaderName.replace("%data%", bio.name));
+        $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+        $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
+        $("#topContacts, #footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
         $("#topContacts, #footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
         $("#topContacts, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
         $("#topContacts, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
-        $("#topContacts, #footerContacts").append(HTMLbioPic.replace("%data%", bio.biopic));
-        $("#topContacts, #footerContacts").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
-        $("#topContacts, #footerContacts").append(HTMLskillsStart);
+        $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
+        $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+        $("#header").append(HTMLskillsStart);
         bio.skills.forEach(function(skill) {
-            $("#topContacts, #footerContacts").append(HTMLskills.replace("%data%", skill));
+            $("#header").append(HTMLskills.replace("%data%", skill));
         });
     }
 };
