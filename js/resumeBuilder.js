@@ -5,19 +5,19 @@ var bio = {
     "name": "Kim Hastings",
     "role": "Web Developer",
     "contacts": {
-        "mobile": 555 - 555 - 5555,
+        "mobile": "555-555-5555",
         "email": "glsa@aol.com",
         "github": "https://github.com/kimhastings/",
         "location": "John Day, Oregon"
     },
-    "welcomeMsg": "Motto: Done is better than perfect",
+    "welcomeMessage": "Motto: Done is better than perfect",
     "skills": [
         "Wildlife biologist",
         "Code ninja",
         "Dog whisperer",
         "Night owl"
     ],
-    "bioPic": "images/owl.jpg",
+    "biopic": "images/owl.jpg",
     "display": function() {
         $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
         $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
@@ -26,8 +26,8 @@ var bio = {
         $("#header").append(HTMLgithub.replace("%data%", bio.contacts.github));
         $("#header").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
-        $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
-        $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg));
+        $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
+        $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
         $("#header").append(HTMLskillsStart);
         bio.skills.forEach(function(skill) {
             $("#header").append(HTMLskills.replace("%data%", skill));
@@ -114,21 +114,21 @@ var education = {
             "degree": "Ph.D.",
             "dates": "1997-2005",
             "location": "Missoula, MT",
-            "major": "Organismal Biology and Ecology"
+            "majors": ["Organismal Biology and Ecology"]
         },
         {
             "name": "University of Montana",
             "degree": "M.S.",
             "dates": "1994-1997",
             "location": "Missoula, MT",
-            "major": "Forest Ecology"
+            "majors": ["Forest Ecology"]
         },
         {
             "name": "Montana State University",
             "degree": "M.S.",
             "dates": "1979-1982",
             "location": "Bozeman, MT",
-            "major": "Computer Science"
+            "majors": ["Computer Science"]
         }
     ],
     "onlineCourses": [{
@@ -144,8 +144,8 @@ var education = {
             var schoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
             var schoolDates = HTMLschoolDates.replace("%data%", school.dates);
             var schoolLocation = HTMLschoolLocation.replace("%data%", school.location);
-            var schoolMajor = HTMLschoolMajor.replace("%data%", school.major);
-            $(".education-entry:last").append(schoolName + schoolDegree, schoolDates + schoolLocation, schoolMajor);
+            var schoolMajors = HTMLschoolMajor.replace("%data%", school.majors);
+            $(".education-entry:last").append(schoolName + schoolDegree, schoolDates + schoolLocation, schoolMajors);
         });
         $(".education-entry:last").append(HTMLonlineClasses);
         education.onlineCourses.forEach(function(course) {
